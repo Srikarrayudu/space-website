@@ -480,8 +480,7 @@ function createSolarSystem() {
     );
 
 
-//SUN
-```js
+
 // ========================================================
 // ☀️ SUN
 // ========================================================
@@ -538,7 +537,7 @@ const glow =
     );
 
 solarSystem.add(glow);
-```
+
 
     // ========================================================
     // 🪐 PLANETS
@@ -651,7 +650,7 @@ function createPlanet(
 
 const planetTextures = {
 
-    ```js
+    
 Mercury: "mercury.jpg",
 Venus: "venus.jpg",
 Earth: "earth.jpg",
@@ -660,7 +659,7 @@ Jupiter: "jupiter.jpg",
 Saturn: "saturn.jpg",
 Uranus: "uranus.jpg",
 Neptune: "neptune.jpg"
-```
+
 
 };
 
@@ -786,7 +785,7 @@ if (data.name === "Earth") {
         atmosphere;
 
 }
-```js
+
 // ========================================================
 // 🌙 EARTH'S MOON
 // ========================================================
@@ -829,7 +828,7 @@ if (data.name === "Earth") {
 
     planet.userData.moon = moon;
 }
-```
+
   
     // ========================================================
     // 🪐 SATURN RINGS
