@@ -22,13 +22,9 @@ let controls=null;
 let stars;
 let solarSystem;
 
-
 let universeStarted = false;
-let animationLoopStarted = false;
+let animationLoopStarted=false;
 let cinematicControlUnlocked = false;
-
-let universeRenderingPaused = false;
-let animationFrameId = null;
 
 let clock = new THREE.Clock();
 
@@ -151,15 +147,10 @@ function startUniverse3D() {
         // ========================================================
         // 🛑 STOP THE PREVIOUS UNIVERSE LOOP
         // ========================================================
-        
-universeStarted = false;
-animationLoopStarted = false;
-
-if (animationFrameId !== null) {
-    cancelAnimationFrame(animationFrameId);
-    animationFrameId = null;
-}
-
+    
+        universeStarted = false;
+        animationLoopStarted = false;
+    
         // ========================================================
         // 🚀 RESET MISSION STATE
         // ========================================================
@@ -480,7 +471,7 @@ function createSolarSystem() {
     );
 
 
-
+//SUN
 // ========================================================
 // ☀️ SUN
 // ========================================================
@@ -494,10 +485,30 @@ const sunGeometry =
         64
     );
 
-// No texture file required — use a glowing orange Sun.
+const sunTexture =
+    textureLoader.load(
+        "sun.jpg",
+
+        function () {
+            console.log("☀️ SUN TEXTURE LOADED");
+        },
+
+        undefined,
+
+        function (error) {
+            console.error(
+                "❌ SUN TEXTURE FAILED:",
+                error
+            );
+        }
+    );
+
+sunTexture.colorSpace =
+    THREE.SRGBColorSpace;
+
 const sunMaterial =
     new THREE.MeshBasicMaterial({
-        color: 0xffaa33
+        map: sunTexture
     });
 
 const sun =
@@ -509,34 +520,42 @@ const sun =
 sun.name = "Sun";
 
 solarSystem.add(sun);
+    // ========================================================
+    // 🌟 SUN GLOW
+    // ========================================================
 
-// ========================================================
-// 🌟 SUN GLOW
-// ========================================================
+    const glowGeometry =
+        new THREE.SphereGeometry(
+            7.5,
+            32,
+            32
+        );
 
-const glowGeometry =
-    new THREE.SphereGeometry(
-        7.5,
-        32,
-        32
+    const glowMaterial =
+        new THREE.MeshBasicMaterial({
+
+            color: 0xff8c00,
+
+            transparent: true,
+
+            opacity: 0.18,
+
+            blending:
+                THREE.AdditiveBlending,
+
+            depthWrite: false
+
+        });
+
+    const glow =
+        new THREE.Mesh(
+            glowGeometry,
+            glowMaterial
+        );
+
+    solarSystem.add(
+        glow
     );
-
-const glowMaterial =
-    new THREE.MeshBasicMaterial({
-        color: 0xff8c00,
-        transparent: true,
-        opacity: 0.18,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false
-    });
-
-const glow =
-    new THREE.Mesh(
-        glowGeometry,
-        glowMaterial
-    );
-
-solarSystem.add(glow);
 
 
     // ========================================================
@@ -650,16 +669,16 @@ function createPlanet(
 
 const planetTextures = {
 
+        Mercury: "mercury.jpg",
+        Venus: "venus.jpg",
+        Earth: "earth.jpg",
+        Mars: "mars.jpg",
+        Jupiter: "jupiter.jpg",
+        Saturn: "saturn.jpg",
+        Uranus: "uranus.jpg",
+        Neptune: "neptune.jpg"
     
-Mercury: "mercury.jpg",
-Venus: "venus.jpg",
-Earth: "earth.jpg",
-Mars: "mars.jpg",
-Jupiter: "jupiter.jpg",
-Saturn: "saturn.jpg",
-Uranus: "uranus.jpg",
-Neptune: "neptune.jpg"
-
+    
 
 };
 
@@ -786,7 +805,8 @@ if (data.name === "Earth") {
 
 }
 
-// ========================================================
+  
+    // ========================================================
 // 🌙 EARTH'S MOON
 // ========================================================
 
@@ -799,10 +819,17 @@ if (data.name === "Earth") {
             32
         );
 
-    // Procedural grey Moon — no image file required.
+    const moonTexture =
+        textureLoader.load(
+            "moon.jpg"
+        );
+
+    moonTexture.colorSpace =
+        THREE.SRGBColorSpace;
+
     const moonMaterial =
         new THREE.MeshStandardMaterial({
-            color: 0x999999,
+            map: moonTexture,
             roughness: 0.9,
             metalness: 0
         });
@@ -829,7 +856,6 @@ if (data.name === "Earth") {
     planet.userData.moon = moon;
 }
 
-  
     // ========================================================
     // 🪐 SATURN RINGS
     // ========================================================
@@ -2766,98 +2792,218 @@ planetWorldPosition
 
 // ============================================================
 // 🔄 ANIMATION LOOP
-
 function animate() {
+
+    // ========================================================
+    // 🛑 STOP LOOP WHEN UNIVERSE IS NO LONGER ACTIVE
+    // ========================================================
+
     if (!universeStarted) {
+
         animationLoopStarted = false;
-        animationFrameId = null;
+
         return;
     }
 
-    if (universeRenderingPaused || document.hidden) {
-        animationFrameId = null;
-        return;
-    }
+    requestAnimationFrame(
+        animate
+    );
 
-    animationFrameId = requestAnimationFrame(animate);
+    const delta =
+        clock.getDelta();
 
-    // Avoid a large time jump after a delayed frame.
-    const delta = Math.min(clock.getDelta(), 0.05);
 
-    // Star rotation
+    // ========================================================
+    // ⭐ STAR ROTATION
+    // ========================================================
     if (stars) {
+
         if (travelMissionActive) {
-            stars.rotation.y += delta * 0.45;
-            stars.rotation.x += delta * 0.12;
-
+    
+            // 🚀 High-speed travel effect
+    
+            stars.rotation.y +=
+                delta * 0.45;
+    
+            stars.rotation.x +=
+                delta * 0.12;
+    
             if (stars.material) {
-                stars.material.size = 3.5;
+    
+                stars.material.size =
+                    3.5;
+    
             }
+    
         } else {
-            stars.rotation.y += delta * 0.008;
-            stars.rotation.x += delta * 0.002;
-
+    
+            // ⭐ Normal space movement
+    
+            stars.rotation.y +=
+                delta * 0.008;
+    
+            stars.rotation.x +=
+                delta * 0.002;
+    
             if (stars.material) {
-                stars.material.size = 1.7;
+    
+                stars.material.size =
+                    1.7;
+    
             }
+    
         }
+    
     }
 
-    // Planet orbits and rotations
-    planetObjects.forEach(function (item) {
-        item.orbit.rotation.y += delta * item.data.speed;
-        item.mesh.rotation.y += delta * 0.25;
 
-        // Earth atmosphere pulse
-        if (item.mesh.userData.atmosphere) {
-            const atmosphere = item.mesh.userData.atmosphere;
+
+    // ========================================================
+    // 🪐 PLANET ORBITS
+    // ========================================================
+    // ========================================================
+// 🪐 PLANET ORBITS
+// ========================================================
+
+planetObjects.forEach(
+    function (item) {
+
+        item.orbit.rotation.y +=
+            delta *
+            item.data.speed;
+
+        item.mesh.rotation.y +=
+            delta *
+            0.25;
+
+
+        // ====================================================
+        // 🌍 EARTH ATMOSPHERE PULSE
+        // ====================================================
+
+        if (
+            item.mesh.userData.atmosphere
+        ) {
+
+            const atmosphere =
+                item.mesh.userData.atmosphere;
 
             const pulse =
-                1 + Math.sin(performance.now() * 0.0015) * 0.025;
+                1 +
+                Math.sin(
+                    performance.now() *
+                    0.0015
+                ) *
+                0.025;
 
-            atmosphere.scale.set(pulse, pulse, pulse);
+            atmosphere.scale.set(
+                pulse,
+                pulse,
+                pulse
+            );
+
         }
 
-        // Saturn rings
-        if (item.mesh.userData.ringSystem) {
-            item.mesh.userData.ringSystem.rotation.z += delta * 0.35;
+
+        // ====================================================
+        // 🪐 SATURN RING ROTATION
+        // ====================================================
+
+        if (
+            item.mesh.userData.ringSystem
+        ) {
+
+            item.mesh.userData.ringSystem.rotation.z +=
+                delta *
+                0.35;
+
         }
 
-        // Earth's moon
-        if (item.mesh.userData.moon) {
-            moonOrbitAngle += delta * 0.6;
 
-            const moon = item.mesh.userData.moon;
-            const moonDistance = 3.5;
+        // ====================================================
+        // 🌙 MOON ORBIT AROUND EARTH
+        // ====================================================
 
-            moon.position.x = Math.cos(moonOrbitAngle) * moonDistance;
-            moon.position.z = Math.sin(moonOrbitAngle) * moonDistance;
+        if (
+            item.mesh.userData.moon
+        ) {
+
+            moonOrbitAngle +=
+                delta *
+                0.6;
+
+            const moon =
+                item.mesh.userData.moon;
+
+            const moonDistance =
+                3.5;
+
+            moon.position.x =
+                Math.cos(
+                    moonOrbitAngle
+                ) *
+                moonDistance;
+
+            moon.position.z =
+                Math.sin(
+                    moonOrbitAngle
+                ) *
+                moonDistance;
+
         }
-    });
 
-    // Sun pulse
+    }
+);
+    // ========================================================
+    // ☀️ SUN PULSE
+    // ========================================================
+
     if (solarSystem) {
-        const sun = solarSystem.getObjectByName("Sun");
+
+        const sun =
+            solarSystem.getObjectByName(
+                "Sun"
+            );
 
         if (sun) {
+
             const scale =
-                1 + Math.sin(performance.now() * 0.0015) * 0.015;
+                1 +
+                Math.sin(
+                    performance.now() *
+                    0.0015
+                ) *
+                0.015;
 
-            sun.scale.set(scale, scale, scale);
+            sun.scale.set(
+                scale,
+                scale,
+                scale
+            );
+
         }
+
     }
 
-    // Camera controls
-    if (controls && !travelMissionActive) {
+    if (
+        controls &&
+        !travelMissionActive
+    ) {
+    
         controls.update();
+    
     }
 
-    // Render the scene
-    if (renderer && scene && camera) {
-        renderer.render(scene, camera);
+    if (renderer) {
+
+        renderer.render(
+            scene,
+            camera
+        );
+
     }
+
 }
-
 
 // ============================================================
 // 📐 RESIZE
@@ -2906,42 +3052,23 @@ window.addEventListener(
     }
 );
 console.log("🌌 STAGE 1 UNIVERSE.JS IS RUNNING");
+// Fix lag when video + canvas both run
+let lastTime = 0;
+const fps = 30;
+function limitFPS(time){
+  if(time - lastTime >= 1000/fps){
+    lastTime = time;
+    // your existing renderer.render() call stays inside here
+  }
+  requestAnimationFrame(limitFPS);
+}
 
-window.addEventListener("cosmic-cinematic-start", function () {
-    universeRenderingPaused = true;
-
-    if (animationFrameId !== null) {
-        cancelAnimationFrame(animationFrameId);
-        animationFrameId = null;
-    }
-});
-
-window.addEventListener("cosmic-cinematic-end", function () {
-    universeRenderingPaused = false;
-
-    if (
-        universeStarted &&
-        !document.hidden &&
-        animationFrameId === null
-    ) {
-        clock.getDelta();
-        animationFrameId = requestAnimationFrame(animate);
-    }
-});
-
-// Pause rendering while the browser tab is hidden.
-document.addEventListener("visibilitychange", function () {
-    if (document.hidden) {
-        if (animationFrameId !== null) {
-            cancelAnimationFrame(animationFrameId);
-            animationFrameId = null;
-        }
-    } else if (
-        universeStarted &&
-        !universeRenderingPaused &&
-        animationFrameId === null
-    ) {
-        clock.getDelta();
-        animationFrameId = requestAnimationFrame(animate);
-    }
-});
+// Pause star animation when tab hidden, resume when visible
+document.addEventListener('visibilitychange', () => {
+  if(document.hidden){
+    // pause heavy work
+    document.querySelector('video').pause();
+  } else {
+    document.querySelector('video').play();
+  }
+}); 
