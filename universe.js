@@ -496,9 +496,8 @@ const sunGeometry =
 
 const sunTexture =
     textureLoader.load(
-        "``` js
-        sun:sun.jpg
-    ```",
+        "
+        sun: "sun.jpg",
 
         function () {
             console.log("☀️ SUN TEXTURE LOADED");
@@ -832,10 +831,8 @@ if (data.name === "Earth") {
 
     const moonTexture =
         textureLoader.load(
-            "```js 
-            moon:moon.jpg
-        ```"
-        );
+            "
+           moon:" moon.jpg");
 
     moonTexture.colorSpace =
         THREE.SRGBColorSpace;
