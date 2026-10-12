@@ -79,7 +79,7 @@ let planets = [
     {
         emoji: "🌕",
         name: "Venus",
-        image: "venus.png",
+        image: "images/venus.png",
         description:
             "The hottest planet in our Solar System.",
         moons: 0,
