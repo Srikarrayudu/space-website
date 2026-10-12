@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>🌌 COSMIC THRILLER</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="parallel-world.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <h2 class="logo">
+            🌌 COSMIC THRILLER
+        </h2>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#missions">Missions</a>
+            <a href="#planets">Planets</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#about">About</a>
+        </div>
+
+    </nav>
+
+
+    <!-- SHOOTING STARS -->
+    <div class="shooting-star star1"></div>
+    <div class="shooting-star star2"></div>
+    <div class="shooting-star star3"></div>
+    <div class="shooting-star star4"></div>
+
+
+    <!-- HOME / HERO -->
+    <section class="hero" id="home">
+
+        <h1 id="title">
+            🌌 COSMIC THRILLER
+        </h1>
+
+        <p>
+            Explore the universe beyond imagination.
+        </p>
+
+        <button id="missionBtn" type="button">
+            🚀 Start Mission
+        </button>
+
+    </section>
+
+
+    <!-- MISSIONS -->
+    <section id="missions">
+
+        <div class="hero">
+
+            <h2>
+                🛰 Mission Control
+            </h2>
+
+            <p>
+                Prepare yourself for a journey through space.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PLANETS -->
+    <section class="planet-section" id="planets">
+
+        <h2>
+            🪐 SOLAR SYSTEM
+        </h2>
+
+        <!-- JavaScript creates the planet cards here -->
+        <div class="planet-grid"></div>
+        <div id="planetInfo"></div>
+
+    </section>
+
+
+    <!-- EXTRA MISSION CONTROL SECTION -->
+    <section id="mission-control-extra">
+
+        <div class="mission-control">
+
+            <h2>
+                🛰 Mission Control
+            </h2>
+
+            <p>
+                Prepare yourself for a journey through space.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- HYPERSPACE -->
+    <div id="hyperspace">
+
+        <div class="hyperspace-text">
+            🚀 TRAVELLING THROUGH SPACE...
+        </div>
+
+        <div class="star-layer-far"></div>
+        <div class="star-layer-mid"></div>
+        <div class="star-layer-near"></div>
+
+    </div>
+
+
+    <!-- FLASH EFFECT -->
+    <div id="flash"></div>
+
+
+    <!-- THREE.JS UNIVERSE -->
+    <div id="universe-3d"></div>
+
+
+    <!-- GALLERY -->
+    <section id="gallery">
+
+        <div class="hero">
+
+            <h2>
+                🌌 Cosmic Gallery
+            </h2>
+
+            <p>
+                Discover the beauty of deep space.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <div class="hero">
+
+            <h2>
+                🚀 About Cosmic Thriller
+            </h2>
+
+            <p>
+                A cinematic interactive journey through the
+                universe, solar system and deep space.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+    <script src="home-cosmos.js"></script>
+    <script src="milky-way-home.js"></script>
+    <script src="cosmic-hover.js"></script>
+
+    <!-- THREE.JS IMPORT MAP -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+        }
+    }
+    </script>
+
+    <!-- THREE.JS / UNIVERSE ENGINE -->
+    <script type="module" src="universe.js"></script>
+    <script type="module" src="parallel-world.js"></script>
+
+</body>
+</html>
