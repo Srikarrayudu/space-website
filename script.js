@@ -69,7 +69,7 @@ let planets = [
     {
         emoji: "🌑",
         name: "Mercury",
-        image: "images/mercury.png",
+        image: "mercury.png",
         description:
             "The smallest and fastest planet.",
         moons: 0,
@@ -79,7 +79,7 @@ let planets = [
     {
         emoji: "🌕",
         name: "Venus",
-        image: "images/venus.png",
+        image: "venus.png",
         description:
             "The hottest planet in our Solar System.",
         moons: 0,
@@ -89,7 +89,7 @@ let planets = [
     {
         emoji: "🌍",
         name: "Earth",
-        image: "images/earth.jpeg1.png",
+        image: "earth.jpeg1.png",
         description:
             "Our beautiful home planet.",
         moons: 1,
@@ -99,7 +99,7 @@ let planets = [
     {
         emoji: "🔴",
         name: "Mars",
-        image: "images/mars.png",
+        image: "mars.png",
         description:
             "The Red Planet and future home of astronauts.",
         moons: 2,
@@ -109,7 +109,7 @@ let planets = [
     {
         emoji: "🟠",
         name: "Jupiter",
-        image: "images/jupiter.png",
+        image: "jupiter.png",
         description:
             "The largest planet in the Solar System.",
         moons: 95,
@@ -119,7 +119,7 @@ let planets = [
     {
         emoji: "🪐",
         name: "Saturn",
-        image: "images/saturn.png",
+        image: "saturn.png",
         description:
             "The planet with beautiful rings.",
         moons: 146,
@@ -129,7 +129,7 @@ let planets = [
     {
         emoji: "🔵",
         name: "Uranus",
-        image: "images/uranus.png",
+        image: "uranus.png",
         description:
             "An icy giant that rotates on its side.",
         moons: 28,
@@ -139,7 +139,7 @@ let planets = [
     {
         emoji: "🌊",
         name: "Neptune",
-        image: "images/neptune.png",
+        image: "neptune.png",
         description:
             "The windiest planet in the Solar System.",
         moons: 16,
