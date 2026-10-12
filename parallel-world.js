@@ -1852,7 +1852,7 @@ let spectraVideoActive = false;
 
     video.preload =
         "auto";
-
+   video.setAttribute("playsinline", "");
     video.controls =
         false;
 
