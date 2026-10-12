@@ -678,7 +678,7 @@ function createPlanet(
 
 const planetTextures = {
 
-    
+    ```js
 Mercury: "mercury.jpg",
 Venus: "venus.jpg",
 Earth: "earth.jpg",
@@ -687,7 +687,7 @@ Jupiter: "jupiter.jpg",
 Saturn: "saturn.jpg",
 Uranus: "uranus.jpg",
 Neptune: "neptune.jpg"
-
+```
 
 };
 
