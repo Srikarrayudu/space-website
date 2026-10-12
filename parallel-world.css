@@ -1,0 +1,4630 @@
+/* ============================================================
+   COSMIC THRILLER — PARALLEL WORLD
+   THE ECHO FIELD / SPECTRA
+
+   Complete Parallel World CSS
+   Stages:
+   1. Entry
+   2. Portal Crossing
+   3. Spectra World
+   4A. Planet Surface
+   4B. Moons + Echo Field Star
+   4C. Asteroids + Distant Spacecraft
+   4D. Artificial Civilization Lights
+   ============================================================ */
+
+
+/* ============================================================
+   1. ENTER THE OTHER SIDE BUTTON
+   ============================================================ */
+
+   #parallel-world-entry {
+
+    position: fixed !important;
+
+    left: 50% !important;
+
+    bottom: 30px !important;
+
+    transform: translateX(-50%) !important;
+
+    z-index: 1000001 !important;
+
+    display: block !important;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    pointer-events: auto !important;
+
+    margin: 0 !important;
+
+    padding: 14px 30px !important;
+
+    min-width: 280px;
+
+    border: 1px solid rgba(0, 255, 255, 0.9);
+
+    border-radius: 50px;
+
+    background:
+        rgba(0, 8, 18, 0.94);
+
+    color: cyan;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    letter-spacing: 0.12em;
+
+    cursor: pointer;
+
+    text-align: center;
+
+    box-shadow:
+
+        0 0 12px
+        rgba(0, 255, 255, 0.45),
+
+        0 0 30px
+        rgba(0, 255, 255, 0.20);
+
+    transition:
+
+        transform 0.3s ease,
+
+        box-shadow 0.3s ease,
+
+        background 0.3s ease;
+
+}
+
+
+#parallel-world-entry:hover {
+
+    transform:
+        translateX(-50%)
+        translateY(-4px) !important;
+
+    background:
+        rgba(0, 50, 70, 0.96);
+
+    box-shadow:
+
+        0 0 20px
+        rgba(0, 255, 255, 0.7),
+
+        0 0 45px
+        rgba(0, 255, 255, 0.3);
+
+}
+
+
+/* ============================================================
+   2. PORTAL TRANSITION
+   ============================================================ */
+
+#parallel-portal-transition {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 999999999;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #071d32 0%,
+            #02030b 45%,
+            #000000 100%
+        );
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 1.5s ease;
+
+}
+
+
+#parallel-portal-transition.portal-active {
+
+    opacity: 1;
+
+    pointer-events: auto;
+
+}
+
+
+/* ============================================================
+   PORTAL STAR FIELD
+   ============================================================ */
+
+.portal-stars {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.85) 1px,
+            transparent 1.5px
+        );
+
+    background-size:
+        90px 90px;
+
+    opacity: 0.35;
+
+    animation:
+        portalStarDrift 30s linear infinite;
+
+}
+
+
+@keyframes portalStarDrift {
+
+    from {
+        transform:
+            scale(1)
+            translate3d(0,0,0);
+    }
+
+    to {
+        transform:
+            scale(1.2)
+            translate3d(-40px,20px,0);
+    }
+
+}
+
+
+/* ============================================================
+   PORTAL VORTEX
+   ============================================================ */
+
+.portal-vortex {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 280px;
+
+    height: 280px;
+
+    transform:
+        translate(-50%, -50%);
+
+}
+
+
+/* ============================================================
+   PORTAL RINGS
+   ============================================================ */
+
+.portal-ring {
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+
+    border:
+        2px solid
+        rgba(100, 240, 255, 0.85);
+
+    box-shadow:
+
+        0 0 15px
+        rgba(0, 220, 255, 0.8),
+
+        0 0 50px
+        rgba(0, 150, 255, 0.45),
+
+        inset 0 0 30px
+        rgba(0, 200, 255, 0.35);
+
+}
+
+
+.ring-1 {
+
+    animation:
+        portalRotate 5s linear infinite;
+
+}
+
+
+.ring-2 {
+
+    inset: 18px;
+
+    border-color:
+        rgba(180, 120, 255, 0.8);
+
+    animation:
+        portalRotateReverse 3.5s linear infinite;
+
+}
+
+
+.ring-3 {
+
+    inset: 38px;
+
+    border-color:
+        rgba(80, 255, 230, 0.75);
+
+    animation:
+        portalRotate 2.5s linear infinite;
+
+}
+
+
+/* ============================================================
+   PORTAL CORE
+   ============================================================ */
+
+.portal-core {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 95px;
+
+    height: 95px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+
+            #ffffff 0%,
+
+            #a5f5ff 8%,
+
+            #28dfff 22%,
+
+            #07558a 48%,
+
+            #000000 72%
+        );
+
+    box-shadow:
+
+        0 0 30px
+        #4eeeff,
+
+        0 0 80px
+        rgba(0, 180, 255, 0.8),
+
+        0 0 160px
+        rgba(100, 60, 255, 0.45);
+
+    animation:
+        portalPulse 1.8s ease-in-out infinite;
+
+}
+
+
+/* ============================================================
+   PORTAL TEXT
+   ============================================================ */
+
+.portal-text {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: calc(50% + 190px);
+
+    transform:
+        translateX(-50%);
+
+    width: 90%;
+
+    text-align: center;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    color: white;
+
+}
+
+
+.portal-small {
+
+    font-size: 12px;
+
+    letter-spacing:
+        0.35em;
+
+    color:
+        rgba(150, 240, 255, 0.75);
+
+    margin-bottom: 15px;
+
+}
+
+
+.portal-main {
+
+    font-size: 28px;
+
+    letter-spacing:
+        0.18em;
+
+    text-shadow:
+        0 0 20px cyan;
+
+}
+
+
+.portal-coordinates {
+
+    margin-top: 18px;
+
+    font-size: 10px;
+
+    line-height: 1.8;
+
+    letter-spacing:
+        0.15em;
+
+    color:
+        rgba(200, 240, 255, 0.55);
+
+}
+
+
+/* ============================================================
+   PORTAL ENTERING STATE
+   ============================================================ */
+
+#parallel-portal-transition.portal-entering
+.portal-vortex {
+
+    animation:
+        portalEnter 2.3s ease-in forwards;
+
+}
+
+
+#parallel-portal-transition.portal-entering
+.portal-text {
+
+    opacity: 0;
+
+    transition:
+        opacity 1s ease;
+
+}
+
+
+/* ============================================================
+   PORTAL ANIMATIONS
+   ============================================================ */
+
+@keyframes portalRotate {
+
+    from {
+
+        transform:
+            rotate(0deg)
+            scale(1);
+
+    }
+
+    to {
+
+        transform:
+            rotate(360deg)
+            scale(1);
+
+    }
+
+}
+
+
+@keyframes portalRotateReverse {
+
+    from {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+    to {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+}
+
+
+@keyframes portalPulse {
+
+    0%,
+    100% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.9);
+
+    }
+
+    50% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.15);
+
+    }
+
+}
+
+
+@keyframes portalEnter {
+
+    0% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+    }
+
+    100% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(12);
+
+    }
+
+}
+
+
+/* ============================================================
+   3. SPECTRA WORLD
+   ============================================================ */
+
+#parallel-world-scene {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 999999998;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            ellipse at 70% 45%,
+            rgba(25, 70, 100, 0.32),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            ellipse at 30% 70%,
+            rgba(80, 30, 110, 0.18),
+            transparent 40%
+        ),
+
+        #010208;
+
+    opacity: 0;
+
+    transition:
+        opacity 3s ease;
+
+}
+
+
+#parallel-world-scene.world-visible {
+
+    opacity: 1;
+
+}
+
+
+/* ============================================================
+   SPECTRA STAR FIELD
+   ============================================================ */
+
+.parallel-world-stars {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.9) 1px,
+            transparent 1.5px
+        );
+
+    background-size:
+        110px 110px;
+
+    opacity: 0.55;
+
+    animation:
+        spectraStars 45s linear infinite;
+
+}
+
+
+@keyframes spectraStars {
+
+    from {
+
+        transform:
+            scale(1);
+
+    }
+
+    to {
+
+        transform:
+            scale(1.12);
+
+    }
+
+}
+
+
+/* ============================================================
+   SPECTRA NEBULA
+   ============================================================ */
+
+.parallel-world-nebula {
+
+    position: absolute;
+
+    inset: -20%;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+
+        radial-gradient(
+            ellipse at 75% 35%,
+            rgba(40, 130, 180, 0.18),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            ellipse at 30% 70%,
+            rgba(110, 50, 170, 0.13),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            ellipse at 60% 70%,
+            rgba(30, 90, 140, 0.12),
+            transparent 35%
+        );
+
+    filter:
+        blur(18px);
+
+    animation:
+        nebulaDrift 35s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes nebulaDrift {
+
+    from {
+
+        transform:
+            scale(1)
+            translate3d(0,0,0);
+
+    }
+
+    to {
+
+        transform:
+            scale(1.08)
+            translate3d(-2%,1%,0);
+
+    }
+
+}
+
+
+/* ============================================================
+   4A — SPECTRA PLANET
+   ============================================================ */
+
+.parallel-world-planet {
+
+    position: absolute;
+
+    width:
+        min(58vw, 620px);
+
+    height:
+        min(58vw, 620px);
+
+    left: 72%;
+
+    top: 53%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    z-index: 10;
+
+    background:
+
+        radial-gradient(
+            circle at 35% 30%,
+            rgba(150, 210, 220, 0.9) 0%,
+            transparent 12%
+        ),
+
+        radial-gradient(
+            circle at 42% 42%,
+            #245b69 0%,
+            #153c4b 20%,
+            #0b2734 43%,
+            #06151f 70%,
+            #02080e 100%
+        );
+
+    box-shadow:
+
+        inset
+        -65px -20px 100px
+        rgba(0,0,0,0.9),
+
+        inset
+        25px 10px 55px
+        rgba(60,190,210,0.12),
+
+        0 0 45px
+        rgba(50,180,220,0.16);
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+        opacity 4s ease;
+
+    animation:
+        spectraPlanetFloat 14s ease-in-out infinite;
+
+}
+
+
+#parallel-world-scene.world-visible
+.parallel-world-planet {
+
+    opacity: 1;
+
+}
+
+
+/* ============================================================
+   SPECTRA SURFACE DETAILS
+   ============================================================ */
+
+.parallel-world-planet::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -2%;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            ellipse at 35% 48%,
+            rgba(40,130,130,0.5),
+            transparent 22%
+        ),
+
+        radial-gradient(
+            ellipse at 55% 35%,
+            rgba(80,150,130,0.42),
+            transparent 18%
+        ),
+
+        radial-gradient(
+            ellipse at 65% 62%,
+            rgba(30,100,110,0.5),
+            transparent 24%
+        );
+
+    opacity: 0.65;
+
+    mix-blend-mode: screen;
+
+}
+
+
+/* ============================================================
+   SPECTRA ATMOSPHERE
+   ============================================================ */
+
+.parallel-world-planet::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -4%;
+
+    border-radius: 50%;
+
+    border:
+        8px solid
+        rgba(90,220,255,0.08);
+
+    box-shadow:
+
+        0 0 25px
+        rgba(70,220,255,0.18),
+
+        inset
+        0 0 25px
+        rgba(80,190,255,0.10);
+
+    pointer-events: none;
+
+}
+
+
+@keyframes spectraPlanetFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translate(-50%, -50%)
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translate(-50%, -50%)
+            translateY(-8px);
+
+    }
+
+}
+
+
+/* ============================================================
+   4B — SPECTRA MOON ONE
+   ============================================================ */
+
+.spectra-moon,
+.elyria-moon {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+}
+
+
+.spectra-moon-one,
+.elyria-moon-one {
+
+    width: 105px;
+
+    height: 105px;
+
+    left: 78%;
+
+    top: 18%;
+
+    z-index: 20;
+
+    background:
+
+        radial-gradient(
+            circle at 35% 30%,
+            #bcecff 0%,
+            #4b9fc1 35%,
+            #16394e 72%,
+            #07131e 100%
+        );
+
+    box-shadow:
+
+        0 0 25px
+        rgba(70,200,255,0.25);
+
+    animation:
+        moonOneFloat 18s ease-in-out infinite;
+
+}
+
+
+/* ============================================================
+   SPECTRA MOON TWO
+   ============================================================ */
+
+.spectra-moon-two,
+.elyria-moon-two {
+
+    width: 55px;
+
+    height: 55px;
+
+    left: 57%;
+
+    top: 25%;
+
+    z-index: 20;
+
+    background:
+
+        radial-gradient(
+            circle at 35% 30%,
+            #d8baff 0%,
+            #7656a8 35%,
+            #24183c 75%,
+            #08050f 100%
+        );
+
+    box-shadow:
+
+        0 0 20px
+        rgba(150,100,255,0.28);
+
+    animation:
+        moonTwoFloat 13s ease-in-out infinite;
+
+}
+
+
+/* Reveal moons */
+
+.echo-field-arrival .spectra-moon,
+.echo-field-arrival .elyria-moon,
+.veyra-arrival .spectra-moon,
+.veyra-arrival .elyria-moon {
+
+    opacity: 1;
+
+    transition:
+        opacity 4s ease 1s;
+
+}
+
+
+@keyframes moonOneFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translate3d(0,0,0);
+
+    }
+
+    50% {
+
+        transform:
+            translate3d(-10px,12px,0);
+
+    }
+
+}
+
+
+@keyframes moonTwoFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translate3d(0,0,0);
+
+    }
+
+    50% {
+
+        transform:
+            translate3d(8px,-8px,0);
+
+    }
+
+}
+
+
+/* ============================================================
+   4B — THE ECHO FIELD STAR
+   ============================================================ */
+
+.echo-field-star,
+.veyra-star {
+
+    position: absolute;
+
+    left: 43%;
+
+    top: 12%;
+
+    width: 32px;
+
+    height: 32px;
+
+    z-index: 15;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            #fff4b0 20%,
+            #ffbd45 48%,
+            #e66b20 75%,
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 15px
+        rgba(255,200,80,0.9),
+
+        0 0 45px
+        rgba(255,150,50,0.55),
+
+        0 0 90px
+        rgba(255,100,20,0.2);
+
+    opacity: 0;
+
+}
+
+
+.echo-field-star::before,
+.veyra-star::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 110px;
+
+    height: 2px;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,220,130,0.6),
+            transparent
+        );
+
+}
+
+
+.echo-field-star::after,
+.veyra-star::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    width: 2px;
+
+    height: 110px;
+
+    transform:
+        translate(-50%, -50%);
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(255,220,130,0.6),
+            transparent
+        );
+
+}
+
+
+.echo-field-arrival .echo-field-star,
+.echo-field-arrival .veyra-star,
+.veyra-arrival .echo-field-star,
+.veyra-arrival .veyra-star {
+
+    opacity: 1;
+
+    animation:
+        echoStarPulse 5s ease-in-out infinite;
+
+    transition:
+        opacity 4s ease;
+
+}
+
+
+@keyframes echoStarPulse {
+
+    0%,
+    100% {
+
+        transform:
+            scale(0.92);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.08);
+
+    }
+
+}
+
+
+/* ============================================================
+   4C — SPECTRA ASTEROID FIELD
+   ============================================================ */
+
+.spectra-asteroid,
+.elyria-asteroid {
+
+    position: absolute;
+
+    border-radius: 42% 58% 53% 47%;
+
+    z-index: 18;
+
+    pointer-events: none;
+
+    opacity: 0;
+
+    background:
+
+        radial-gradient(
+            circle at 35% 30%,
+            #6e7478 0%,
+            #363b40 25%,
+            #171b1f 60%,
+            #05070a 100%
+        );
+
+    box-shadow:
+
+        inset
+        -5px -5px 10px
+        rgba(0,0,0,0.8),
+
+        inset
+        3px 3px 5px
+        rgba(255,255,255,0.08);
+
+}
+
+
+/* Asteroid craters */
+
+.spectra-asteroid::before,
+.elyria-asteroid::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 25%;
+
+    height: 18%;
+
+    left: 30%;
+
+    top: 35%;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,0,0,0.35);
+
+    box-shadow:
+
+        12px 5px 0
+        rgba(0,0,0,0.18),
+
+        -8px -6px 0
+        rgba(0,0,0,0.15);
+
+}
+
+
+/* Asteroid positions */
+
+.asteroid-01 {
+
+    width: 18px;
+    height: 14px;
+
+    left: 34%;
+    top: 28%;
+
+}
+
+.asteroid-02 {
+
+    width: 11px;
+    height: 9px;
+
+    left: 48%;
+    top: 22%;
+
+}
+
+.asteroid-03 {
+
+    width: 25px;
+    height: 18px;
+
+    left: 57%;
+    top: 32%;
+
+}
+
+.asteroid-04 {
+
+    width: 13px;
+    height: 10px;
+
+    left: 76%;
+    top: 37%;
+
+}
+
+.asteroid-05 {
+
+    width: 20px;
+    height: 15px;
+
+    left: 28%;
+    top: 68%;
+
+}
+
+.asteroid-06 {
+
+    width: 9px;
+    height: 8px;
+
+    left: 67%;
+    top: 72%;
+
+}
+
+.asteroid-07 {
+
+    width: 15px;
+    height: 11px;
+
+    left: 84%;
+    top: 60%;
+
+}
+
+
+/* Asteroid reveal */
+
+.echo-field-arrival .spectra-asteroid,
+.echo-field-arrival .elyria-asteroid,
+.veyra-arrival .spectra-asteroid,
+.veyra-arrival .elyria-asteroid {
+
+    opacity: 0.72;
+
+}
+
+
+/* Asteroid motion */
+
+.echo-field-arrival .asteroid-01,
+.veyra-arrival .asteroid-01 {
+
+    animation:
+        asteroidDrift01 30s linear infinite;
+
+}
+
+
+.echo-field-arrival .asteroid-02,
+.veyra-arrival .asteroid-02 {
+
+    animation:
+        asteroidDrift02 38s linear infinite;
+
+}
+
+
+.echo-field-arrival .asteroid-03,
+.veyra-arrival .asteroid-03 {
+
+    animation:
+        asteroidDrift03 25s linear infinite;
+
+}
+
+
+.echo-field-arrival .asteroid-04,
+.veyra-arrival .asteroid-04 {
+
+    animation:
+        asteroidDrift04 42s linear infinite;
+
+}
+
+
+.echo-field-arrival .asteroid-05,
+.veyra-arrival .asteroid-05 {
+
+    animation:
+        asteroidDrift05 34s linear infinite;
+
+}
+
+
+.echo-field-arrival .asteroid-06,
+.veyra-arrival .asteroid-06 {
+
+    animation:
+        asteroidDrift06 29s linear infinite;
+
+}
+
+
+.echo-field-arrival .asteroid-07,
+.veyra-arrival .asteroid-07 {
+
+    animation:
+        asteroidDrift07 40s linear infinite;
+
+}
+
+
+@keyframes asteroidDrift01 {
+
+    from {
+        transform:
+            translate3d(0,0,0)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate3d(80px,35px,0)
+            rotate(240deg);
+    }
+
+}
+
+
+@keyframes asteroidDrift02 {
+
+    from {
+        transform:
+            translate3d(0,0,0)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate3d(-60px,55px,0)
+            rotate(-220deg);
+    }
+
+}
+
+
+@keyframes asteroidDrift03 {
+
+    from {
+        transform:
+            translate3d(0,0,0)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate3d(90px,-40px,0)
+            rotate(300deg);
+    }
+
+}
+
+
+@keyframes asteroidDrift04 {
+
+    from {
+        transform:
+            translate3d(0,0,0)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate3d(-75px,-50px,0)
+            rotate(-180deg);
+    }
+
+}
+
+
+@keyframes asteroidDrift05 {
+
+    from {
+        transform:
+            translate3d(0,0,0)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate3d(65px,-35px,0)
+            rotate(210deg);
+    }
+
+}
+
+
+@keyframes asteroidDrift06 {
+
+    from {
+        transform:
+            translate3d(0,0,0)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate3d(-50px,45px,0)
+            rotate(-260deg);
+    }
+
+}
+
+
+@keyframes asteroidDrift07 {
+
+    from {
+        transform:
+            translate3d(0,0,0)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate3d(-80px,25px,0)
+            rotate(190deg);
+    }
+
+}
+
+
+/* ============================================================
+   4C — DISTANT SPACECRAFT
+   ============================================================ */
+
+.distant-spacecraft {
+
+    position: absolute;
+
+    left: 72%;
+
+    top: 34%;
+
+    width: 5px;
+
+    height: 2px;
+
+    z-index: 17;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    background:
+        rgba(210,245,255,0.85);
+
+    box-shadow:
+
+        0 0 5px
+        rgba(180,240,255,0.8),
+
+        0 0 15px
+        rgba(100,200,255,0.35);
+
+}
+
+
+.spacecraft-light {
+
+    position: absolute;
+
+    width: 2px;
+
+    height: 2px;
+
+    right: -2px;
+
+    top: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,180,100,0.9);
+
+    box-shadow:
+        0 0 6px
+        rgba(255,170,90,0.8);
+
+}
+
+
+.echo-field-arrival .distant-spacecraft,
+.veyra-arrival .distant-spacecraft {
+
+    opacity: 0.65;
+
+    animation:
+        spacecraftDrift 18s ease-in-out infinite;
+
+}
+
+
+@keyframes spacecraftDrift {
+
+    0%,
+    100% {
+
+        transform:
+            translate3d(0,0,0);
+
+    }
+
+    50% {
+
+        transform:
+            translate3d(-100px,35px,0);
+
+    }
+
+}
+
+
+/* ============================================================
+   4D — SPECTRA CIVILIZATION LIGHTS
+   ============================================================ */
+
+.spectra-surface-lights,
+.elyria-surface-lights {
+
+    position: absolute;
+
+    width: 440px;
+
+    height:440px;
+
+    left: 78%;
+
+    top: 55%;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    z-index: 19;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+}
+
+
+/* ============================================================
+   CITY / SETTLEMENT REGIONS
+   ============================================================ */
+
+.spectra-region,
+.elyria-region {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            ellipse,
+
+            rgba(255,220,140,0.72) 0%,
+
+            rgba(255,190,90,0.42) 18%,
+
+            rgba(255,150,60,0.15) 45%,
+
+            transparent 75%
+        );
+
+    filter:
+        blur(1px);
+
+}
+
+
+/* Main settlement */
+
+.region-01 {
+
+    width: 95px;
+
+    height: 55px;
+
+    left: 22%;
+
+    top: 50%;
+
+    transform:
+        rotate(-18deg);
+
+}
+
+
+/* Secondary settlement */
+
+.region-02 {
+
+    width: 65px;
+
+    height: 40px;
+
+    left: 52%;
+
+    top: 57%;
+
+    transform:
+        rotate(15deg);
+
+}
+
+
+/* Small remote settlement */
+
+.region-03 {
+
+    width: 38px;
+
+    height: 27px;
+
+    left: 67%;
+
+    top: 42%;
+
+    transform:
+        rotate(-25deg);
+
+}
+
+
+/* ============================================================
+   CITY LIGHT NETWORKS
+   ============================================================ */
+
+.spectra-road,
+.elyria-road {
+
+    position: absolute;
+
+    height: 1px;
+
+    transform-origin:
+        left center;
+
+    background:
+
+        linear-gradient(
+            90deg,
+
+            transparent,
+
+            rgba(255,215,130,0.65),
+
+            rgba(255,190,90,0.32),
+
+            transparent
+        );
+
+    box-shadow:
+
+        0 0 5px
+        rgba(255,190,100,0.25);
+
+    opacity: 0.55;
+
+}
+
+
+.road-01 {
+
+    width: 105px;
+
+    left: 25%;
+
+    top: 54%;
+
+    transform:
+        rotate(12deg);
+
+}
+
+
+.road-02 {
+
+    width: 82px;
+
+    left: 46%;
+
+    top: 61%;
+
+    transform:
+        rotate(-20deg);
+
+}
+
+
+.road-03 {
+
+    width: 65px;
+
+    left: 60%;
+
+    top: 48%;
+
+    transform:
+        rotate(28deg);
+
+}
+
+
+/* ============================================================
+   INDIVIDUAL SURFACE LIGHTS
+   ============================================================ */
+
+.city-light {
+
+    position: absolute;
+
+    width: 3px;
+
+    height: 3px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,215,135,0.95);
+
+    box-shadow:
+
+        0 0 3px
+        rgba(255,210,120,0.8),
+
+        0 0 8px
+        rgba(255,180,80,0.3);
+
+    opacity: 0.7;
+
+}
+
+
+.light-01 {
+    left: 18%;
+    top: 53%;
+}
+
+.light-02 {
+    left: 22%;
+    top: 49%;
+}
+
+.light-03 {
+    left: 27%;
+    top: 58%;
+}
+
+.light-04 {
+    left: 32%;
+    top: 52%;
+}
+
+.light-05 {
+    left: 39%;
+    top: 62%;
+}
+
+.light-06 {
+    left: 47%;
+    top: 56%;
+}
+
+.light-07 {
+    left: 54%;
+    top: 65%;
+}
+
+.light-08 {
+    left: 61%;
+    top: 58%;
+}
+
+.light-09 {
+    left: 68%;
+    top: 62%;
+}
+
+.light-10 {
+    left: 75%;
+    top: 54%;
+}
+
+
+/* ============================================================
+   CIVILIZATION LIGHT REVEAL
+   ============================================================ */
+
+.echo-field-arrival .spectra-surface-lights,
+.echo-field-arrival .elyria-surface-lights,
+.veyra-arrival .spectra-surface-lights,
+.veyra-arrival .elyria-surface-lights {
+
+    opacity: 1;
+
+    transition:
+        opacity 7s ease 3s;
+
+}
+
+
+/* ============================================================
+   LIGHT PULSING
+   ============================================================ */
+
+.echo-field-arrival .light-01,
+.echo-field-arrival .light-04,
+.echo-field-arrival .light-07,
+.veyra-arrival .light-01,
+.veyra-arrival .light-04,
+.veyra-arrival .light-07 {
+
+    animation:
+        cityLightPulse 6s ease-in-out infinite;
+
+}
+
+
+.echo-field-arrival .light-02,
+.echo-field-arrival .light-05,
+.echo-field-arrival .light-09,
+.veyra-arrival .light-02,
+.veyra-arrival .light-05,
+.veyra-arrival .light-09 {
+
+    animation:
+        cityLightPulse 8s ease-in-out infinite 1s;
+
+}
+
+
+.echo-field-arrival .light-03,
+.echo-field-arrival .light-06,
+.echo-field-arrival .light-08,
+.echo-field-arrival .light-10,
+.veyra-arrival .light-03,
+.veyra-arrival .light-06,
+.veyra-arrival .light-08,
+.veyra-arrival .light-10 {
+
+    animation:
+        cityLightPulse 10s ease-in-out infinite 2s;
+
+}
+
+
+@keyframes cityLightPulse {
+
+    0%,
+    100% {
+
+        opacity:
+            0.4;
+
+    }
+
+    50% {
+
+        opacity:
+            0.95;
+
+    }
+
+}
+
+
+/* ============================================================
+   ISOLATED ARTIFICIAL SIGNAL
+   ============================================================ */
+
+.spectra-isolated-signal,
+.elyria-isolated-signal {
+
+    position: absolute;
+
+    width: 3px;
+
+    height: 3px;
+
+    left: 61%;
+
+    top: 48%;
+
+    border-radius: 50%;
+
+    z-index: 21;
+
+    background:
+        rgba(120,220,255,0.95);
+
+    box-shadow:
+
+        0 0 5px
+        rgba(120,220,255,0.9),
+
+        0 0 15px
+        rgba(80,190,255,0.45),
+
+        0 0 28px
+        rgba(60,160,255,0.20);
+
+    opacity: 0;
+
+}
+
+
+.echo-field-arrival .spectra-isolated-signal,
+.echo-field-arrival .elyria-isolated-signal,
+.veyra-arrival .spectra-isolated-signal,
+.veyra-arrival .elyria-isolated-signal {
+
+    opacity: 0.8;
+
+    transition:
+        opacity 4s ease 4s;
+
+    animation:
+        signalPulse 4s ease-in-out infinite;
+
+}
+
+
+@keyframes signalPulse {
+
+    0%,
+    100% {
+
+        transform:
+            scale(0.8);
+
+        opacity:
+            0.45;
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.4);
+
+        opacity:
+            1;
+
+    }
+
+}
+
+
+/* ============================================================
+   5. SPECTRA CONTENT / INFORMATION
+   ============================================================ */
+
+.parallel-world-content {
+
+    position: absolute;
+
+    left: 8%;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    max-width: 650px;
+
+    z-index: 30;
+
+    color: white;
+
+}
+
+
+.parallel-world-label {
+
+    font-size: 12px;
+
+    letter-spacing:
+        0.4em;
+
+    color:
+        #71efff;
+
+    margin-bottom: 25px;
+
+}
+
+
+.parallel-world-content h1 {
+
+    margin: 0;
+
+    font-size:
+        clamp(70px, 12vw, 170px);
+
+    font-weight:
+        300;
+
+    letter-spacing:
+        0.12em;
+
+    text-shadow:
+
+        0 0 20px
+        rgba(100,240,255,0.8),
+
+        0 0 70px
+        rgba(70,150,255,0.45);
+
+}
+
+
+.parallel-world-subtitle {
+
+    margin-top: 5px;
+
+    font-size: 15px;
+
+    letter-spacing:
+        0.25em;
+
+    color:
+        rgba(220,250,255,0.75);
+
+}
+
+
+.parallel-world-location {
+
+    display: flex;
+
+    gap: 22px;
+
+    margin-top: 45px;
+
+    font-size: 13px;
+
+    letter-spacing:
+        0.15em;
+
+}
+
+
+.parallel-world-location span {
+
+    color:
+        rgba(100,230,255,0.55);
+
+}
+
+
+.parallel-world-message {
+
+    margin-top: 55px;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    letter-spacing:
+        0.16em;
+
+    color:
+        rgba(240,250,255,0.8);
+
+}
+
+
+.parallel-world-status {
+
+    margin-top: 30px;
+
+    font-size: 11px;
+
+    line-height: 2;
+
+    letter-spacing:
+        0.15em;
+
+    color:
+        rgba(180,230,240,0.62);
+
+}
+
+
+/* ============================================================
+   6. ARRIVAL STATE
+   ============================================================ */
+
+.echo-field-arrival .parallel-world-content,
+.veyra-arrival .parallel-world-content {
+
+    animation:
+        contentArrival 2.5s ease forwards;
+
+}
+
+
+@keyframes contentArrival {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-50%)
+            translateX(-25px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(-50%)
+            translateX(0);
+
+    }
+
+}
+
+
+/* ============================================================
+   7. OPTIONAL GENERIC HUD
+   ============================================================ */
+
+#parallel-interface {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 7vh;
+
+    z-index: 40;
+
+    width:
+        min(90vw, 850px);
+
+    transform:
+        translateX(-50%);
+
+    text-align: center;
+
+    color:
+        #dffbff;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    pointer-events:
+        none;
+
+}
+
+
+.parallel-eyebrow {
+
+    font-size: 11px;
+
+    letter-spacing:
+        0.3em;
+
+    opacity:
+        0.6;
+
+    margin-bottom:
+        14px;
+
+}
+
+
+#parallel-status {
+
+    font-size:
+        clamp(18px, 3vw, 30px);
+
+    letter-spacing:
+        0.18em;
+
+}
+
+
+.parallel-coordinates {
+
+    margin-top:
+        14px;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.8;
+
+    letter-spacing:
+        0.18em;
+
+    opacity:
+        0.48;
+
+}
+
+
+/* ============================================================
+   8. MOBILE RESPONSIVENESS
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+    #parallel-world-entry {
+
+        bottom:
+            22px !important;
+
+        min-width:
+            240px;
+
+        padding:
+            12px 20px !important;
+
+        font-size:
+            12px;
+
+    }
+
+
+    .portal-vortex {
+
+        width:
+            190px;
+
+        height:
+            190px;
+
+    }
+
+
+    .portal-core {
+
+        width:
+            65px;
+
+        height:
+            65px;
+
+    }
+
+
+    .portal-text {
+
+        top:
+            calc(50% + 135px);
+
+    }
+
+
+    .portal-main {
+
+        font-size:
+            18px;
+
+    }
+
+
+    .parallel-world-content {
+
+        left:
+            6%;
+
+        top:
+            42%;
+
+        max-width:
+            88vw;
+
+    }
+
+
+    .parallel-world-content h1 {
+
+        font-size:
+            clamp(55px, 18vw, 100px);
+
+    }
+
+
+    .parallel-world-subtitle {
+
+        font-size:
+            10px;
+
+    }
+
+
+    .parallel-world-location {
+
+        gap:
+            12px;
+
+        margin-top:
+            25px;
+
+        font-size:
+            9px;
+
+    }
+
+
+    .parallel-world-message {
+
+        margin-top:
+            30px;
+
+        font-size:
+            13px;
+
+    }
+
+
+    .parallel-world-status {
+
+        font-size:
+            8px;
+
+    }
+
+
+    .parallel-world-planet {
+
+        width:
+            72vw;
+
+        height:
+            72vw;
+
+        left:
+            73%;
+
+        top:
+            62%;
+
+    }
+
+
+    .spectra-surface-lights,
+    .elyria-surface-lights {
+
+        width:
+            72vw;
+
+        height:
+            72vw;
+
+        left:
+            73%;
+
+        top:
+            62%;
+
+    }
+
+
+    .spectra-moon-one,
+    .elyria-moon-one {
+
+        width:
+            70px;
+
+        height:
+            70px;
+
+        left:
+            76%;
+
+        top:
+            18%;
+
+    }
+
+
+    .spectra-moon-two,
+    .elyria-moon-two {
+
+        width:
+            38px;
+
+        height:
+            38px;
+
+    }
+
+
+    .echo-field-star,
+    .veyra-star {
+
+        width:
+            22px;
+
+        height:
+            22px;
+
+    }
+
+
+    .portal-coordinates {
+
+        font-size:
+            8px;
+
+    }
+
+}
+/* ============================================================
+   SPECTRA VISIBILITY FIX
+   ============================================================ */
+
+   #parallel-world-scene .parallel-world-planet {
+    position: absolute !important;
+
+    left: 78% !important;
+    top: 55% !important;
+
+    width: 440px !important;
+    height: 440px !important;
+
+    transform: translate(-50%, -50%) !important;
+
+    z-index: 30 !important;
+
+    display: block !important;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    pointer-events: none;
+
+    border-radius: 50%;
+
+    /*
+       Strong atmospheric visibility
+    */
+
+    box-shadow:
+        0 0 35px rgba(80, 180, 255, 0.35),
+        0 0 80px rgba(40, 130, 255, 0.25),
+        0 0 150px rgba(20, 100, 255, 0.15);
+}
+
+
+/* ============================================================
+   MAKE SPECTRA ATMOSPHERE CLEARER
+   ============================================================ */
+
+#parallel-world-scene
+.parallel-world-planet::after {
+
+    opacity: 1 !important;
+
+    display: block !important;
+}
+
+
+/* ============================================================
+   CLOUD LAYER
+   ============================================================ */
+
+#parallel-world-scene
+.parallel-world-planet::before {
+
+    opacity: 0.85 !important;
+
+    display: block !important;
+}
+
+
+/* ============================================================
+   KEEP MOONS ABOVE SPECTRA
+   ============================================================ */
+
+#parallel-world-scene .spectra-moon {
+
+    z-index: 40 !important;
+
+}
+
+
+/* ============================================================
+   KEEP ECHO FIELD STAR ABOVE BACKGROUND
+   ============================================================ */
+
+#parallel-world-scene .echo-field-star {
+
+    z-index: 35 !important;
+
+}
+
+
+/* ============================================================
+   ASTEROIDS
+   ============================================================ */
+
+#parallel-world-scene .spectra-asteroid {
+
+    z-index: 45 !important;
+
+}
+
+
+/* ============================================================
+   SPECTRA CIVILIZATION LIGHTS
+   ============================================================ */
+
+#parallel-world-scene .spectra-surface-lights {
+
+    z-index: 50 !important;
+
+    pointer-events: none;
+
+}
+/* ============================================================
+   RETURN BUTTON — ALWAYS CLICKABLE
+   ============================================================ */
+
+   #parallel-world-scene
+   #leave-parallel-world {
+   
+       position: relative !important;
+   
+       z-index: 999999999 !important;
+   
+       pointer-events: auto !important;
+   
+       cursor: pointer !important;
+   
+       display: block !important;
+   
+       visibility: visible !important;
+   
+       opacity: 1 !important;
+   }
+ /* ============================================================
+   ↩️ SPECTRA RETURN BUTTON
+   ============================================================ */
+
+#leave-parallel-world {
+    position: fixed !important;
+
+    left: auto !important;
+    top: auto !important;
+
+    right: 30px !important;
+    bottom: 30px !important;
+
+    transform: none !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+
+    margin: 0 !important;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 24px !important;
+
+    z-index: 2147483647 !important;
+
+    pointer-events: auto !important;
+
+    cursor: pointer !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    border: 1px solid rgba(150, 235, 255, 0.8);
+
+    border-radius: 30px;
+
+    background: rgba(0, 8, 18, 0.92);
+
+    color: #dffbff;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 0.12em;
+
+    box-shadow:
+        0 0 15px rgba(80, 210, 255, 0.35),
+        0 0 35px rgba(50, 150, 255, 0.15);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+#leave-parallel-world:hover {
+
+    background: rgba(10, 40, 60, 0.96);
+
+    box-shadow:
+        0 0 20px rgba(80, 220, 255, 0.65),
+        0 0 50px rgba(50, 150, 255, 0.25);
+
+    transform: translateY(-2px) !important;
+}
+
+
+@media (max-width: 600px) {
+
+    #leave-parallel-world {
+
+        right: 18px !important;
+        bottom: 18px !important;
+
+        padding: 11px 16px !important;
+
+        font-size: 10px;
+    }
+}
+#leave-parallel-world {
+    position: fixed !important;
+
+    right: 30px !important;
+    bottom: 30px !important;
+
+    left: auto !important;
+    top: auto !important;
+
+    z-index: 2147483647 !important;
+
+    display: flex !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    pointer-events: auto !important;
+
+    cursor: pointer !important;
+
+    transform: none !important;
+
+    margin: 0 !important;
+}
+/* ============================================================
+   🌍 SPECTRA — CINEMATIC PLANET UPGRADE
+   Stage 4A
+   ============================================================ */
+
+   #parallel-world-scene .parallel-world-planet {
+
+    /* Position */
+    position: absolute !important;
+    left: 72% !important;
+    top: 53% !important;
+
+    /* Size */
+    width: 560px !important;
+    height: 560px !important;
+
+    transform: translate(-50%, -50%);
+
+    /* Shape */
+    border-radius: 50%;
+    overflow: hidden;
+
+    /* Deep atmospheric base */
+    background:
+
+        /* Bright upper atmosphere */
+        radial-gradient(
+            circle at 31% 25%,
+            rgba(180, 240, 255, 0.95) 0%,
+            rgba(80, 180, 220, 0.65) 13%,
+            transparent 31%
+        ),
+
+        /* Ocean / deep terrain */
+        radial-gradient(
+            circle at 68% 58%,
+            rgba(8, 70, 105, 0.95) 0%,
+            rgba(5, 38, 65, 0.95) 38%,
+            transparent 68%
+        ),
+
+        /* Spectra surface */
+        radial-gradient(
+            circle at 42% 68%,
+            rgba(30, 125, 105, 0.80) 0%,
+            rgba(12, 65, 70, 0.65) 24%,
+            transparent 45%
+        ),
+
+        /* Base */
+        radial-gradient(
+            circle at 50% 50%,
+            #1b6078 0%,
+            #0b3048 42%,
+            #041321 68%,
+            #000 100%
+        );
+
+    /* Planet lighting */
+    box-shadow:
+
+        /* illuminated atmosphere */
+        -35px -20px 70px
+        rgba(150, 225, 255, 0.24),
+
+        /* outer blue glow */
+        0 0 45px
+        rgba(50, 180, 255, 0.40),
+
+        /* deep halo */
+        0 0 120px
+        rgba(30, 120, 255, 0.22),
+
+        /* subtle shadow */
+        inset -65px -25px 100px
+        rgba(0, 0, 0, 0.85);
+
+    z-index: 50 !important;
+
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    pointer-events: none;
+
+    animation:
+        spectraPlanetFloat 14s ease-in-out infinite,
+        spectraPlanetRotate 90s linear infinite;
+}
+
+
+/* ============================================================
+   🌫️ ATMOSPHERIC SHADOW
+   ============================================================ */
+
+#parallel-world-scene .parallel-world-planet::before {
+
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    border-radius: 50%;
+
+    background:
+
+        /* sunlight */
+        radial-gradient(
+            circle at 30% 27%,
+            rgba(255,255,255,0.18) 0%,
+            rgba(255,255,255,0.05) 25%,
+            transparent 45%
+        ),
+
+        /* night-side falloff */
+        radial-gradient(
+            circle at 75% 60%,
+            rgba(0,0,0,0.00) 0%,
+            rgba(0,0,0,0.28) 42%,
+            rgba(0,0,0,0.72) 72%,
+            rgba(0,0,0,0.96) 100%
+        );
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+
+/* ============================================================
+   ☁️ ATMOSPHERIC RIM
+   ============================================================ */
+
+#parallel-world-scene .parallel-world-planet::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -5px;
+
+    border-radius: 50%;
+
+    border: 3px solid
+        rgba(110, 220, 255, 0.30);
+
+    box-shadow:
+
+        0 0 18px
+        rgba(80, 210, 255, 0.55),
+
+        0 0 45px
+        rgba(50, 180, 255, 0.22),
+
+        inset 0 0 25px
+        rgba(120, 230, 255, 0.18);
+
+    z-index: 4;
+
+    pointer-events: none;
+}
+
+
+/* ============================================================
+   🌊 SUBTLE PLANET MOVEMENT
+   ============================================================ */
+
+@keyframes spectraPlanetFloat {
+
+    0%,
+    100% {
+
+        margin-top: 0;
+
+    }
+
+    50% {
+
+        margin-top: -8px;
+
+    }
+
+}
+
+
+/* ============================================================
+   🌀 VERY SLOW PLANET ROTATION
+   ============================================================ */
+
+@keyframes spectraPlanetRotate {
+
+    from {
+
+        filter:
+            brightness(1)
+            saturate(1.05);
+
+    }
+
+    50% {
+
+        filter:
+            brightness(1.04)
+            saturate(1.12);
+
+    }
+
+    to {
+
+        filter:
+            brightness(1)
+            saturate(1.05);
+
+    }
+
+}
+
+
+/* ============================================================
+   ✨ ATMOSPHERIC PARTICLES AROUND PLANET
+   ============================================================ */
+
+#parallel-world-scene .parallel-world-planet {
+
+    isolation: isolate;
+
+}
+
+
+/* ============================================================
+   💠 PLANET PERFORMANCE
+   ============================================================ */
+
+#parallel-world-scene .parallel-world-planet {
+
+    will-change:
+        transform,
+        filter;
+
+}
+
+
+/* ============================================================
+   📱 TABLET
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+    #parallel-world-scene .parallel-world-planet {
+
+        left: 70% !important;
+        top: 55% !important;
+
+        width: 430px !important;
+        height: 430px !important;
+
+    }
+
+}
+
+
+/* ============================================================
+   📱 MOBILE
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+    #parallel-world-scene .parallel-world-planet {
+
+        left: 70% !important;
+        top: 57% !important;
+
+        width: 320px !important;
+        height: 320px !important;
+
+    }
+
+}
+/* ============================================================
+   🎬 SPECTRA HUD — FINAL LAYER
+   ============================================================ */
+
+   #parallel-world-scene .parallel-world-content {
+
+    z-index: 200 !important;
+
+    pointer-events: auto !important;
+
+}
+#leave-parallel-world {
+
+    pointer-events: auto !important;
+
+    z-index: 2147483647 !important;
+
+}
+/* ============================================================
+   🌌 4B — SPECTRA STAR SYSTEM CINEMATIC UPGRADE
+   ============================================================ */
+
+
+/* ============================================================
+   🌕 MOON ONE — LARGE / CLOSE
+   ============================================================ */
+
+   #parallel-world-scene .spectra-moon-one {
+
+    width: 92px !important;
+    height: 92px !important;
+
+    left: 82% !important;
+    top: 23% !important;
+
+    z-index: 35 !important;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle at 32% 27%,
+            rgba(235,250,255,1) 0%,
+            rgba(155,215,235,0.95) 14%,
+            rgba(70,125,155,0.9) 38%,
+            rgba(22,48,65,0.95) 72%,
+            rgba(3,10,17,1) 100%
+        );
+
+    box-shadow:
+
+        inset -18px -8px 25px
+        rgba(0,0,0,0.75),
+
+        0 0 20px
+        rgba(100,210,255,0.28),
+
+        0 0 50px
+        rgba(70,170,255,0.12);
+
+    animation:
+        spectraMoonOneOrbit 28s
+        ease-in-out infinite;
+
+}
+
+
+/* ============================================================
+   🌑 MOON TWO — SMALL / DISTANT
+   ============================================================ */
+
+#parallel-world-scene .spectra-moon-two {
+
+    width: 48px !important;
+    height: 48px !important;
+
+    left: 58% !important;
+    top: 20% !important;
+
+    z-index: 25 !important;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle at 30% 25%,
+            rgba(225,215,255,1) 0%,
+            rgba(145,120,190,0.9) 22%,
+            rgba(65,45,90,0.95) 58%,
+            rgba(10,7,18,1) 100%
+        );
+
+    box-shadow:
+
+        inset -10px -6px 14px
+        rgba(0,0,0,0.8),
+
+        0 0 18px
+        rgba(170,130,255,0.25);
+
+    animation:
+        spectraMoonTwoOrbit 42s
+        ease-in-out infinite;
+
+}
+
+
+/* ============================================================
+   🌕 MOON ONE MOVEMENT
+   ============================================================ */
+
+@keyframes spectraMoonOneOrbit {
+
+    0%,
+    100% {
+
+        transform:
+            translate3d(0,0,0)
+            scale(1);
+
+    }
+
+    25% {
+
+        transform:
+            translate3d(-18px,10px,0)
+            scale(1.02);
+
+    }
+
+    50% {
+
+        transform:
+            translate3d(-30px,22px,0)
+            scale(1.04);
+
+    }
+
+    75% {
+
+        transform:
+            translate3d(-12px,8px,0)
+            scale(1.02);
+
+    }
+
+}
+
+
+/* ============================================================
+   🌑 MOON TWO MOVEMENT
+   ============================================================ */
+
+@keyframes spectraMoonTwoOrbit {
+
+    0%,
+    100% {
+
+        transform:
+            translate3d(0,0,0)
+            scale(1);
+
+    }
+
+    25% {
+
+        transform:
+            translate3d(16px,-10px,0)
+            scale(0.98);
+
+    }
+
+    50% {
+
+        transform:
+            translate3d(30px,-18px,0)
+            scale(0.95);
+
+    }
+
+    75% {
+
+        transform:
+            translate3d(12px,-6px,0)
+            scale(0.98);
+
+    }
+
+}
+
+
+/* ============================================================
+   ☀️ ECHO FIELD — STAR UPGRADE
+   ============================================================ */
+
+#parallel-world-scene .echo-field-star {
+
+    left: 43% !important;
+    top: 13% !important;
+
+    width: 34px !important;
+    height: 34px !important;
+
+    z-index: 40 !important;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #ffffff 0%,
+            #fffbd0 12%,
+            #ffe07a 30%,
+            #ffae38 55%,
+            #e85b18 78%,
+            transparent 100%
+        );
+
+    box-shadow:
+
+        0 0 12px
+        rgba(255,235,150,0.95),
+
+        0 0 35px
+        rgba(255,185,70,0.75),
+
+        0 0 75px
+        rgba(255,130,30,0.42),
+
+        0 0 130px
+        rgba(255,100,20,0.20);
+
+}
+
+
+/* ============================================================
+   ✨ STAR RAYS
+   ============================================================ */
+
+#parallel-world-scene .echo-field-star::before {
+
+    width: 150px !important;
+    height: 2px !important;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,230,150,0.15),
+            rgba(255,220,120,0.75),
+            rgba(255,230,150,0.15),
+            transparent
+        );
+
+}
+
+
+#parallel-world-scene .echo-field-star::after {
+
+    width: 2px !important;
+    height: 150px !important;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(255,230,150,0.15),
+            rgba(255,220,120,0.75),
+            rgba(255,230,150,0.15),
+            transparent
+        );
+
+}
+
+
+/* ============================================================
+   🌟 STAR PULSE
+   ============================================================ */
+
+@keyframes spectraStarPulse {
+
+    0%,
+    100% {
+
+        transform: scale(0.96);
+
+        filter:
+            brightness(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.08);
+
+        filter:
+            brightness(1.12);
+
+    }
+
+}
+
+
+#parallel-world-scene .echo-field-star {
+
+    animation:
+        spectraStarPulse 6s
+        ease-in-out infinite;
+
+}
+
+
+/* ============================================================
+   🎬 DEPTH ORDER
+   ============================================================ */
+
+#parallel-world-scene .parallel-world-planet {
+
+    z-index: 50 !important;
+
+}
+
+
+#parallel-world-scene .spectra-moon-one {
+
+    z-index: 35 !important;
+
+}
+
+
+#parallel-world-scene .spectra-moon-two {
+
+    z-index: 25 !important;
+
+}
+
+
+#parallel-world-scene .echo-field-star {
+
+    z-index: 40 !important;
+
+}
+/* ============================================================
+   🌕 4B — MOON VISIBILITY FIX
+   ============================================================ */
+
+   #parallel-world-scene .spectra-moon-one {
+
+    left: 86% !important;
+    top: 20% !important;
+
+    z-index: 70 !important;
+
+}
+#parallel-world-scene .spectra-moon-two {
+
+    left: 57% !important;
+    top: 31% !important;
+
+    z-index: 65 !important;
+
+}
+#parallel-world-scene .spectra-moon-one,
+#parallel-world-scene .spectra-moon-two {
+
+    pointer-events: none;
+
+    opacity: 1 !important;
+
+}
+/* ============================================================
+   ☄️ 4C — SPECTRA ASTEROID FIELD
+   ============================================================ */
+
+   #parallel-world-scene .spectra-asteroid {
+
+    pointer-events: none;
+
+    z-index: 55 !important;
+
+    border-radius:
+        42% 58% 53% 47%;
+
+    background:
+
+        radial-gradient(
+            circle at 32% 25%,
+            #a3a7aa 0%,
+            #686d70 18%,
+            #35393d 42%,
+            #171b1f 72%,
+            #050608 100%
+        );
+
+    box-shadow:
+
+        inset
+        -7px -7px 12px
+        rgba(0,0,0,0.85),
+
+        inset
+        4px 4px 7px
+        rgba(255,255,255,0.08),
+
+        0 0 8px
+        rgba(160,180,190,0.08);
+
+}
+
+
+/* ============================================================
+   ☄️ INDIVIDUAL ASTEROID SIZES
+   ============================================================ */
+
+#parallel-world-scene .spectra-asteroid:nth-of-type(1) {
+
+    width: 22px !important;
+    height: 17px !important;
+
+}
+
+#parallel-world-scene .spectra-asteroid:nth-of-type(2) {
+
+    width: 14px !important;
+    height: 12px !important;
+
+}
+
+#parallel-world-scene .spectra-asteroid:nth-of-type(3) {
+
+    width: 30px !important;
+    height: 23px !important;
+
+}
+
+#parallel-world-scene .spectra-asteroid:nth-of-type(4) {
+
+    width: 18px !important;
+    height: 14px !important;
+
+}
+
+#parallel-world-scene .spectra-asteroid:nth-of-type(5) {
+
+    width: 11px !important;
+    height: 10px !important;
+
+}
+
+#parallel-world-scene .spectra-asteroid:nth-of-type(6) {
+
+    width: 25px !important;
+    height: 19px !important;
+
+}
+
+#parallel-world-scene .spectra-asteroid:nth-of-type(7) {
+
+    width: 16px !important;
+    height: 13px !important;
+
+}
+
+
+/* ============================================================
+   🌀 ASTEROID MOTION
+   ============================================================ */
+
+#parallel-world-scene .spectra-asteroid {
+
+    animation:
+        spectraAsteroidDrift
+        22s
+        ease-in-out
+        infinite;
+
+}
+
+
+#parallel-world-scene .spectra-asteroid:nth-of-type(2) {
+
+    animation-duration: 28s;
+
+}
+
+
+#parallel-world-scene .spectra-asteroid:nth-of-type(3) {
+
+    animation-duration: 35s;
+
+}
+
+
+#parallel-world-scene .spectra-asteroid:nth-of-type(4) {
+
+    animation-duration: 25s;
+
+}
+
+
+#parallel-world-scene .spectra-asteroid:nth-of-type(5) {
+
+    animation-duration: 31s;
+
+}
+
+
+#parallel-world-scene .spectra-asteroid:nth-of-type(6) {
+
+    animation-duration: 39s;
+
+}
+
+
+#parallel-world-scene .spectra-asteroid:nth-of-type(7) {
+
+    animation-duration: 27s;
+
+}
+
+
+@keyframes spectraAsteroidDrift {
+
+    0%,
+    100% {
+
+        transform:
+            translate3d(0,0,0)
+            rotate(0deg);
+
+    }
+
+    25% {
+
+        transform:
+            translate3d(10px,-8px,0)
+            rotate(35deg);
+
+    }
+
+    50% {
+
+        transform:
+            translate3d(-12px,10px,0)
+            rotate(80deg);
+
+    }
+
+    75% {
+
+        transform:
+            translate3d(7px,5px,0)
+            rotate(130deg);
+
+    }
+
+}
+/* ============================================================
+   🛰️ DISTANT SPACECRAFT
+   ============================================================ */
+
+   #parallel-world-scene .distant-spacecraft {
+
+    position: absolute;
+
+    left: 84% !important;
+    top: 72% !important;
+
+    width: 72px !important;
+    height: 18px !important;
+
+    z-index: 45 !important;
+
+    pointer-events: none;
+
+    opacity: 0.72;
+
+    transform:
+        rotate(-8deg);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(190,220,235,0.45) 15%,
+            rgba(230,245,255,0.90) 45%,
+            rgba(150,190,215,0.65) 70%,
+            transparent 100%
+        );
+
+    border-radius: 50%;
+
+    box-shadow:
+
+        0 0 8px
+        rgba(170,220,255,0.55),
+
+        0 0 25px
+        rgba(100,190,255,0.25);
+
+    animation:
+        distantSpacecraftDrift
+        18s
+        ease-in-out
+        infinite;
+
+}
+
+
+#parallel-world-scene .distant-spacecraft::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 32px;
+    height: 8px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(235,250,255,0.85);
+
+    box-shadow:
+        0 0 10px
+        rgba(180,230,255,0.8);
+
+}
+
+
+#parallel-world-scene .distant-spacecraft::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: -35px;
+    top: 50%;
+
+    width: 42px;
+    height: 2px;
+
+    transform:
+        translateY(-50%);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(100,210,255,0.30),
+            rgba(180,235,255,0.70)
+        );
+
+    filter:
+        blur(1px);
+
+}
+
+
+@keyframes distantSpacecraftDrift {
+
+    0%,
+    100% {
+
+        transform:
+            translate3d(0,0,0)
+            rotate(-8deg);
+
+        opacity: 0.55;
+
+    }
+
+    50% {
+
+        transform:
+            translate3d(-35px,-12px,0)
+            rotate(-5deg);
+
+        opacity: 0.85;
+
+    }
+
+}
+/* ============================================================
+   🌌 ASTEROID DEPTH
+   ============================================================ */
+
+   #parallel-world-scene .spectra-asteroid:nth-of-type(1),
+   #parallel-world-scene .spectra-asteroid:nth-of-type(4) {
+   
+       filter:
+           brightness(0.65);
+   
+   }
+   
+   
+   #parallel-world-scene .spectra-asteroid:nth-of-type(2),
+   #parallel-world-scene .spectra-asteroid:nth-of-type(5) {
+   
+       filter:
+           brightness(0.45)
+           blur(0.2px);
+   
+   }
+   
+   
+   #parallel-world-scene .spectra-asteroid:nth-of-type(3),
+   #parallel-world-scene .spectra-asteroid:nth-of-type(6) {
+   
+       filter:
+           brightness(0.85);
+   
+   }
+   /* ============================================================
+   🌌 EXPLORE SPECTRA BUTTON
+   ============================================================ */
+
+#explore-spectra-button {
+    position: relative;
+    z-index: 9999;
+    pointer-events: auto;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 28px;
+
+    padding: 14px 32px;
+
+    min-width: 230px;
+
+    border:
+        1px solid
+        rgba(100, 240, 255, 0.9);
+
+    border-radius: 40px;
+
+    background:
+        rgba(0, 10, 22, 0.88);
+
+    color:
+        #dffbff;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        13px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        0.2em;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+
+        0 0 12px
+        rgba(80, 220, 255, 0.35),
+
+        0 0 35px
+        rgba(40, 150, 255, 0.15);
+
+    backdrop-filter:
+        blur(8px);
+
+    -webkit-backdrop-filter:
+        blur(8px);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+
+#explore-spectra-button:hover {
+
+    transform:
+        translateY(-3px);
+
+    background:
+        rgba(10, 55, 75, 0.95);
+
+    border-color:
+        rgba(150, 250, 255, 1);
+
+    box-shadow:
+
+        0 0 20px
+        rgba(80, 230, 255, 0.7),
+
+        0 0 50px
+        rgba(50, 160, 255, 0.3);
+
+}
+
+
+#explore-spectra-button:active {
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* ============================================================
+   🎬 SPECTRA CINEMATIC SCREEN
+   ============================================================ */
+
+#spectra-cinematic-screen {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    width:
+        100vw;
+
+    height:
+        100vh;
+
+    z-index:
+        2147483646;
+
+    background:
+        #000000;
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    pointer-events:
+        none;
+
+    overflow:
+        hidden;
+
+    transition:
+        opacity 0.8s ease;
+
+}
+
+
+/* ============================================================
+   CINEMATIC ACTIVE
+   ============================================================ */
+
+#spectra-cinematic-screen.spectra-cinematic-active {
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+    pointer-events:
+        auto;
+
+}
+
+
+/* ============================================================
+   SPECTRA VIDEO
+   ============================================================ */
+
+#spectra-cinematic-video {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        100vw;
+
+    height:
+        100vh;
+
+    transform:
+        translate(-50%, -50%);
+
+    object-fit:
+        cover;
+
+    background:
+        #000000;
+
+    opacity:
+        1;
+
+    transition:
+        opacity 1s ease;
+
+}
+
+
+/* ============================================================
+   VIDEO LOADING TEXT
+   ============================================================ */
+
+#spectra-video-loading {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    color:
+        rgba(220, 250, 255, 0.8);
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        12px;
+
+    letter-spacing:
+        0.35em;
+
+    text-align:
+        center;
+
+    pointer-events:
+        none;
+
+    text-shadow:
+        0 0 20px
+        rgba(80, 220, 255, 0.8);
+
+    transition:
+        opacity 0.8s ease;
+
+}
+
+
+/* ============================================================
+   YOU ARE FREE NOW
+   ============================================================ */
+
+#spectra-free-button {
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    bottom:
+        12vh;
+
+    transform:
+        translateX(-50%);
+
+    min-width:
+        250px;
+
+    padding:
+        15px 34px;
+
+    border:
+        1px solid
+        rgba(150, 240, 255, 0.9);
+
+    border-radius:
+        40px;
+
+    background:
+        rgba(0, 8, 18, 0.92);
+
+    color:
+        #e9fcff;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size:
+        13px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        0.2em;
+
+    cursor:
+        pointer;
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    pointer-events:
+        none;
+
+    box-shadow:
+
+        0 0 18px
+        rgba(90, 220, 255, 0.45),
+
+        0 0 45px
+        rgba(50, 150, 255, 0.2);
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+
+    transition:
+        opacity 1s ease,
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+}
+
+
+/* ============================================================
+   FINAL BUTTON REVEAL
+   ============================================================ */
+
+#spectra-free-button.spectra-free-visible {
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+    pointer-events:
+        auto;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+
+}
+
+
+#spectra-free-button:hover {
+
+    transform:
+        translateX(-50%)
+        translateY(-4px);
+
+    background:
+        rgba(10, 45, 65, 0.96);
+
+    box-shadow:
+
+        0 0 25px
+        rgba(100, 235, 255, 0.75),
+
+        0 0 60px
+        rgba(50, 150, 255, 0.3);
+
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 700px) {
+
+    #explore-spectra-button {
+
+        min-width:
+            200px;
+
+        padding:
+            12px 24px;
+
+        font-size:
+            11px;
+
+    }
+
+
+    #spectra-free-button {
+
+        bottom:
+            9vh;
+
+        min-width:
+            210px;
+
+        padding:
+            13px 24px;
+
+        font-size:
+            11px;
+
+    }
+
+}
+/* ============================================================
+   EXPLORE SPECTRA CLICK FIX
+   ============================================================ */
+
+   #explore-spectra-button {
+    position: relative !important;
+    z-index: 999999 !important;
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
+
+/* ============================================================
+   EXPLORE SPECTRA — STANDALONE VISIBILITY
+   ============================================================ */
+
+   #explore-spectra-button {
+
+    position: fixed !important;
+
+    left: 50% !important;
+    bottom: 90px !important;
+
+    transform: translateX(-50%) !important;
+
+    display: flex !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    z-index: 2147483647 !important;
+
+    pointer-events: auto !important;
+
+    cursor: pointer !important;
+
+    min-width: 240px !important;
+
+    padding: 15px 32px !important;
+
+    box-sizing: border-box !important;
+}
+/* ============================================================
+   SPECTRA CINEMATIC — FINAL FULLSCREEN VIDEO FIX
+   ============================================================ */
+
+   #spectra-cinematic-screen {
+    position: fixed !important;
+
+    inset: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    overflow: hidden !important;
+
+    background: #000 !important;
+
+    z-index: 2147483647 !important;
+}
+
+
+#spectra-cinematic-video {
+    position: absolute !important;
+
+    left: 0 !important;
+    top: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+
+    min-width: 100vw !important;
+    min-height: 100vh !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    display: block !important;
+
+    object-fit: cover !important;
+    object-position: center center !important;
+
+    background: #000 !important;
+
+    transform: none !important;
+
+    z-index: 1 !important;
+}
+/* =========================================================
+   ENTER THE OTHER SIDE — SOLAR SYSTEM ENTRY BUTTON
+   ========================================================= */
+
+   #parallel-world-entry {
+    position: fixed !important;
+
+    left: 30px !important;
+    top: 30px !important;
+
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    padding: 11px 18px !important;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2147483647 !important;
+
+    pointer-events: auto !important;
+    cursor: pointer !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    border: 1px solid rgba(150, 235, 255, 0.8) !important;
+    border-radius: 30px !important;
+
+    background: rgba(0, 8, 18, 0.92) !important;
+
+    color: #dffbff !important;
+
+    font-family: Arial, sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+
+    letter-spacing: 0.12em !important;
+
+    box-shadow:
+        0 0 15px rgba(80, 210, 255, 0.35),
+        0 0 35px rgba(50, 150, 255, 0.15) !important;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    white-space: nowrap;
+}
+
+#parallel-world-entry:hover {
+    background: rgba(10, 40, 60, 0.96) !important;
+
+    box-shadow:
+        0 0 20px rgba(80, 220, 255, 0.65),
+        0 0 50px rgba(50, 150, 255, 0.25) !important;
+
+    transform: translateY(-2px) !important;
+}
+/* =========================================================
+   RETURN BUTTON — MATCH ENTER THE OTHER SIDE
+   ========================================================= */
+
+   #leave-parallel-world {
+    position: fixed !important;
+
+    right: 30px !important;
+    top: 30px !important;
+
+    left: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    padding: 11px 18px !important;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2147483647 !important;
+
+    pointer-events: auto !important;
+    cursor: pointer !important;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    border: 1px solid rgba(150, 235, 255, 0.8) !important;
+    border-radius: 30px !important;
+
+    background: rgba(0, 8, 18, 0.92) !important;
+
+    color: #dffbff !important;
+
+    font-family: Arial, sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+
+    letter-spacing: 0.12em !important;
+
+    box-shadow:
+        0 0 15px rgba(80, 210, 255, 0.35),
+        0 0 35px rgba(50, 150, 255, 0.15) !important;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    white-space: nowrap;
+}
+
+#leave-parallel-world:hover {
+    background: rgba(10, 40, 60, 0.96) !important;
+
+    box-shadow:
+        0 0 20px rgba(80, 220, 255, 0.65),
+        0 0 50px rgba(50, 150, 255, 0.25) !important;
+
+    transform: translateY(-2px) !important;
+}
+/* ============================================================
+   COSMIC THRILLER — MATCHED NAVIGATION BUTTONS
+   ============================================================ */
+
+/* ---------- COMMON BUTTON DESIGN ---------- */
+
+#parallel-world-entry,
+#leave-parallel-world {
+
+    display: flex !important;
+
+    align-items: center;
+    justify-content: center;
+
+    width: auto !important;
+    min-width: 0 !important;
+    height: auto !important;
+
+    padding: 11px 18px !important;
+
+    border: 1px solid rgba(150, 235, 255, 0.8) !important;
+
+    border-radius: 30px !important;
+
+    background: rgba(0, 8, 18, 0.92) !important;
+
+    color: #dffbff !important;
+
+    font-family: Arial, sans-serif !important;
+
+    font-size: 11px !important;
+
+    font-weight: 500 !important;
+
+    letter-spacing: 0.12em !important;
+
+    white-space: nowrap;
+
+    cursor: pointer !important;
+
+    box-shadow:
+        0 0 15px rgba(80, 210, 255, 0.35),
+        0 0 35px rgba(50, 150, 255, 0.15) !important;
+
+    backdrop-filter: blur(8px);
+
+    -webkit-backdrop-filter: blur(8px);
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease !important;
+}
+
+
+/* ---------- ENTER THE OTHER SIDE ---------- */
+
+#parallel-world-entry {
+
+    position: fixed !important;
+
+    left: 30px !important;
+    top: 30px !important;
+
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+
+    z-index: 2147483647 !important;
+}
+
+
+/* ---------- RETURN BUTTON ---------- */
+
+#leave-parallel-world {
+
+    position: fixed !important;
+
+    right: 30px !important;
+    top: 30px !important;
+
+    left: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+
+    z-index: 2147483647 !important;
+}
+
+
+/* ---------- HOVER ---------- */
+
+#parallel-world-entry:hover,
+#leave-parallel-world:hover {
+
+    background:
+        rgba(10, 40, 60, 0.96) !important;
+
+    box-shadow:
+        0 0 20px rgba(80, 220, 255, 0.65),
+        0 0 50px rgba(50, 150, 255, 0.25) !important;
+
+    transform:
+        translateY(-2px) !important;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 600px) {
+
+    #parallel-world-entry {
+
+        left: 18px !important;
+        top: 18px !important;
+    }
+
+    #leave-parallel-world {
+
+        right: 18px !important;
+        top: 18px !important;
+    }
+
+    #parallel-world-entry,
+    #leave-parallel-world {
+
+        padding: 10px 14px !important;
+
+        font-size: 10px !important;
+    }
+}
+/* ============================================================
+   🌌 COSMIC THRILLER
+   FINAL — EXPLORE SPECTRA
+   ============================================================ */
+
+   #parallel-world-scene #explore-spectra-button {
+
+    position: absolute !important;
+
+    /*
+       Same horizontal position as SPECTRA.
+    */
+    left: 72% !important;
+
+    /*
+       Planet center = 53%.
+       Planet radius ≈ 280px.
+       +30px gap below planet.
+    */
+    top: calc(53% + 310px) !important;
+
+    right: auto !important;
+
+    bottom: auto !important;
+
+    transform: translateX(-50%) !important;
+
+    z-index: 999999999 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    pointer-events: auto !important;
+
+    cursor: pointer !important;
+
+    width: auto !important;
+
+    min-width: 240px !important;
+
+    height: auto !important;
+
+    margin: 0 !important;
+
+    padding: 11px 24px !important;
+
+    box-sizing: border-box !important;
+
+    border:
+        1px solid
+        rgba(150, 235, 255, 0.8) !important;
+
+    border-radius: 30px !important;
+
+    background:
+        rgba(0, 8, 18, 0.92) !important;
+
+    color:
+        #dffbff !important;
+
+    font-family:
+        Arial, sans-serif !important;
+
+    font-size:
+        11px !important;
+
+    font-weight:
+        500 !important;
+
+    letter-spacing:
+        0.12em !important;
+
+    white-space:
+        nowrap !important;
+
+    box-shadow:
+        0 0 15px
+        rgba(80, 210, 255, 0.35),
+        0 0 35px
+        rgba(50, 150, 255, 0.15) !important;
+
+    backdrop-filter:
+        blur(8px);
+
+    -webkit-backdrop-filter:
+        blur(8px);
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease !important;
+}
+
+
+/* ============================================================
+   HOVER
+   ============================================================ */
+
+#parallel-world-scene #explore-spectra-button:hover {
+
+    transform:
+        translateX(-50%)
+        translateY(-3px)
+        scale(1.04) !important;
+
+    background:
+        rgba(0, 255, 255, 0.12) !important;
+
+    box-shadow:
+        0 0 35px
+        rgba(0, 255, 255, 0.9),
+        0 0 60px
+        rgba(50, 150, 255, 0.3) !important;
+}
+
+
+/* ============================================================
+   CLICK
+   ============================================================ */
+
+#parallel-world-scene #explore-spectra-button:active {
+
+    transform:
+        translateX(-50%)
+        scale(0.98) !important;
+}
+
+/* ==================================================
+   CINEMATIC PERFORMANCE: PAUSE BACKGROUND ANIMATIONS
+   ================================================== */
+
+   body.spectra-cinematic-active .milky-way-home,
+   body.spectra-cinematic-active .universe-container,
+   body.spectra-cinematic-active .cosmic-background {
+       animation-play-state: paused !important;
+   }
+   
+   /* Keep the cinematic video and its overlay running smoothly. */
+   body.spectra-cinematic-active .spectra-cinematic-overlay {
+       animation-play-state: running !important;
+   }
+   
