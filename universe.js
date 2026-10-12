@@ -496,7 +496,7 @@ const sunGeometry =
 
 const sunTexture =
     textureLoader.load(
-        "images/sun.jpg",
+        "sun:sun.jpg",
 
         function () {
             console.log("☀️ SUN TEXTURE LOADED");
@@ -678,16 +678,16 @@ function createPlanet(
 
 const planetTextures = {
 
-        Mercury: "images/mercury.jpg",
-        Venus: "images/venus.jpg",
-        Earth: "images/earth.jpg",
-        Mars: "images/mars.jpg",
-        Jupiter: "images/jupiter.jpg",
-        Saturn: "images/saturn.jpg",
-        Uranus: "images/uranus.jpg",
-        Neptune: "images/neptune.jpg"
     
-    
+Mercury: "mercury.jpg",
+Venus: "venus.jpg",
+Earth: "earth.jpg",
+Mars: "mars.jpg",
+Jupiter: "jupiter.jpg",
+Saturn: "saturn.jpg",
+Uranus: "uranus.jpg",
+Neptune: "neptune.jpg"
+
 
 };
 
@@ -830,7 +830,7 @@ if (data.name === "Earth") {
 
     const moonTexture =
         textureLoader.load(
-            "images/moon.jpg"
+            "moon:moon.jpg"
         );
 
     moonTexture.colorSpace =
