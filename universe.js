@@ -481,6 +481,7 @@ function createSolarSystem() {
 
 
 //SUN
+```js
 // ========================================================
 // ☀️ SUN
 // ========================================================
@@ -494,31 +495,10 @@ const sunGeometry =
         64
     );
 
-const sunTexture =
-    textureLoader.load(
-        "
-        sun: "sun.jpg",
-
-        function () {
-            console.log("☀️ SUN TEXTURE LOADED");
-        },
-
-        undefined,
-
-        function (error) {
-            console.error(
-                "❌ SUN TEXTURE FAILED:",
-                error
-            );
-        }
-    );
-
-sunTexture.colorSpace =
-    THREE.SRGBColorSpace;
-
+// No texture file required — use a glowing orange Sun.
 const sunMaterial =
     new THREE.MeshBasicMaterial({
-        map: sunTexture
+        color: 0xffaa33
     });
 
 const sun =
@@ -530,43 +510,35 @@ const sun =
 sun.name = "Sun";
 
 solarSystem.add(sun);
-    // ========================================================
-    // 🌟 SUN GLOW
-    // ========================================================
 
-    const glowGeometry =
-        new THREE.SphereGeometry(
-            7.5,
-            32,
-            32
-        );
+// ========================================================
+// 🌟 SUN GLOW
+// ========================================================
 
-    const glowMaterial =
-        new THREE.MeshBasicMaterial({
-
-            color: 0xff8c00,
-
-            transparent: true,
-
-            opacity: 0.18,
-
-            blending:
-                THREE.AdditiveBlending,
-
-            depthWrite: false
-
-        });
-
-    const glow =
-        new THREE.Mesh(
-            glowGeometry,
-            glowMaterial
-        );
-
-    solarSystem.add(
-        glow
+const glowGeometry =
+    new THREE.SphereGeometry(
+        7.5,
+        32,
+        32
     );
 
+const glowMaterial =
+    new THREE.MeshBasicMaterial({
+        color: 0xff8c00,
+        transparent: true,
+        opacity: 0.18,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false
+    });
+
+const glow =
+    new THREE.Mesh(
+        glowGeometry,
+        glowMaterial
+    );
+
+solarSystem.add(glow);
+```
 
     // ========================================================
     // 🪐 PLANETS
@@ -814,9 +786,8 @@ if (data.name === "Earth") {
         atmosphere;
 
 }
-
-  
-    // ========================================================
+```js
+// ========================================================
 // 🌙 EARTH'S MOON
 // ========================================================
 
@@ -829,17 +800,10 @@ if (data.name === "Earth") {
             32
         );
 
-    const moonTexture =
-        textureLoader.load(
-            "
-           moon:" moon.jpg");
-
-    moonTexture.colorSpace =
-        THREE.SRGBColorSpace;
-
+    // Procedural grey Moon — no image file required.
     const moonMaterial =
         new THREE.MeshStandardMaterial({
-            map: moonTexture,
+            color: 0x999999,
             roughness: 0.9,
             metalness: 0
         });
@@ -865,7 +829,8 @@ if (data.name === "Earth") {
 
     planet.userData.moon = moon;
 }
-
+```
+  
     // ========================================================
     // 🪐 SATURN RINGS
     // ========================================================
