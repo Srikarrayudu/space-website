@@ -1569,7 +1569,7 @@ if (exploreButton) {
    SPECTRA CINEMATIC VIDEO EXPERIENCE
    ============================================================ */
    const SPECTRA_CINEMATIC_VIDEO =
-   "../assets/parallel-world/spectra-cinematic.mp4";
+   "https://srikarrayudu.github.io/space-website/assets/parallel-world/spectra-cinematic.mp4";
 let spectraVideoActive = false;
 
 /* ============================================================
